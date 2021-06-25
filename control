@@ -1,0 +1,9 @@
+Package: daniel.ismuted
+Name: isMuted
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Allows fairplay-protected audio to be captured through screen recording.
+Maintainer: daniel
+Author: daniel
+Section: Tweaks
+Depends: mobilesubstrate
