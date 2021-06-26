@@ -1,7 +1,11 @@
 {
     Filter =     {
         Bundles =         (
+            "com.apple.springboard",
             "com.apple.UIKit"
+        );
+        Executables =         (
+            replayd
         );
     };
 }

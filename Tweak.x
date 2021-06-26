@@ -1,3 +1,4 @@
+#import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
 @interface AVPlayer (Custom)
@@ -12,4 +13,16 @@
     arg1 = NO;
     %orig;
 }
+%end
+
+/* Hooks to record continuously￼ even if the device is locked (thank you Muirey03). */
+
+%hook RPRecordingManager
+-(void)setUpDeviceLockNotifications {}
+-(void)setDeviceLocked:(BOOL)arg1 { %orig(NO); }
+-(BOOL)deviceLocked { return NO; }
+%end
+
+%hook RPControlCenterModuleViewController
+-(void)moduleAuthenticateWithCompletionHandler:(void(^)(BOOL))arg1 { arg1(YES); }
 %end
